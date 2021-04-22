@@ -66,11 +66,12 @@
 			children = (
 				F45564D12631C6EE0005CCC7 /* FishApp.swift */,
 				F45564E72631C75D0005CCC7 /* MainTabView.swift */,
+				F45564DA2631C6F00005CCC7 /* Persistence.swift */,
 				F45564EA2631C8920005CCC7 /* ContactsList.swift */,
 				F45564ED2631CBEA0005CCC7 /* ContactsList+Extension.swift */,
+				F45564F32631FF940005CCC7 /* Contact+Manager.swift */,
+				F45564F02631CF5F0005CCC7 /* Contact+Helper.swift */,
 				F45564D52631C6F00005CCC7 /* Assets.xcassets */,
-				F45564DA2631C6F00005CCC7 /* Persistence.swift */,
-				F45564F62631FFBC0005CCC7 /* Contact+Services */,
 				F45564DF2631C6F00005CCC7 /* Info.plist */,
 				F45564DC2631C6F00005CCC7 /* Fish.xcdatamodeld */,
 				F45564D72631C6F00005CCC7 /* Preview Content */,
@@ -84,15 +85,6 @@
 				F45564D82631C6F00005CCC7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F45564F62631FFBC0005CCC7 /* Contact+Services */ = {
-			isa = PBXGroup;
-			children = (
-				F45564F02631CF5F0005CCC7 /* Contact+Helper.swift */,
-				F45564F32631FF940005CCC7 /* Contact+Manager.swift */,
-			);
-			path = "Contact+Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

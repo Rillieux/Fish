@@ -9,7 +9,18 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        Text("My Tabs")
+        TabView {
+            ContactsList()
+                .tabItem{
+                    Image(systemName: "person.crop.circle.fill")
+                    Text("Contacts")
+                }.tag(1)
+            Text("Levels")
+                .tabItem{
+                    Image(systemName: "list.bullet")
+                    Text("Levels")
+                }.tag(2)
+        }
     }
 }
 

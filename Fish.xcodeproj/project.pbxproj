@@ -13,6 +13,9 @@
 		F45564DB2631C6F00005CCC7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45564DA2631C6F00005CCC7 /* Persistence.swift */; };
 		F45564DE2631C6F00005CCC7 /* Fish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F45564DC2631C6F00005CCC7 /* Fish.xcdatamodeld */; };
 		F45564E82631C75D0005CCC7 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45564E72631C75D0005CCC7 /* MainTabView.swift */; };
+		F45564EB2631C8920005CCC7 /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45564EA2631C8920005CCC7 /* ContactsList.swift */; };
+		F45564EE2631CBEA0005CCC7 /* ContactsList+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45564ED2631CBEA0005CCC7 /* ContactsList+Extension.swift */; };
+		F45564F12631CF5F0005CCC7 /* Contact+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45564F02631CF5F0005CCC7 /* Contact+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		F45564DD2631C6F00005CCC7 /* Fish.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fish.xcdatamodel; sourceTree = "<group>"; };
 		F45564DF2631C6F00005CCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45564E72631C75D0005CCC7 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F45564EA2631C8920005CCC7 /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
+		F45564ED2631CBEA0005CCC7 /* ContactsList+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsList+Extension.swift"; sourceTree = "<group>"; };
+		F45564F02631CF5F0005CCC7 /* Contact+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			children = (
 				F45564D12631C6EE0005CCC7 /* FishApp.swift */,
 				F45564E72631C75D0005CCC7 /* MainTabView.swift */,
+				F45564EA2631C8920005CCC7 /* ContactsList.swift */,
+				F45564F02631CF5F0005CCC7 /* Contact+Helper.swift */,
+				F45564ED2631CBEA0005CCC7 /* ContactsList+Extension.swift */,
 				F45564D52631C6F00005CCC7 /* Assets.xcassets */,
 				F45564DA2631C6F00005CCC7 /* Persistence.swift */,
 				F45564DF2631C6F00005CCC7 /* Info.plist */,
@@ -144,9 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45564EB2631C8920005CCC7 /* ContactsList.swift in Sources */,
 				F45564DB2631C6F00005CCC7 /* Persistence.swift in Sources */,
 				F45564D22631C6EE0005CCC7 /* FishApp.swift in Sources */,
 				F45564DE2631C6F00005CCC7 /* Fish.xcdatamodeld in Sources */,
+				F45564EE2631CBEA0005CCC7 /* ContactsList+Extension.swift in Sources */,
+				F45564F12631CF5F0005CCC7 /* Contact+Helper.swift in Sources */,
 				F45564E82631C75D0005CCC7 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

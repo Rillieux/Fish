@@ -9,9 +9,6 @@ import CoreData
 import Combine
 import os
 
-fileprivate let logger = Logger(subsystem: "com.gymsymbol.Fish", category: "ContactDataService")
-
-
 protocol ContactDataServiceProtocol {
     func getContacts() -> [Contact]
     func getContactById(id: NSManagedObjectID) -> Contact?
@@ -49,7 +46,6 @@ class ContactDataService: ContactDataServiceProtocol {
     }
     
     func deleteContact(_ contact: Contact) {
-        logger.log(" * deleteContact \(contact.firstName)")
         viewContext.delete(contact)
         saveContext()
     }

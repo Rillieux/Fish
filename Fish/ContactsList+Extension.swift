@@ -35,9 +35,7 @@ extension ContactsList {
             offsets.forEach { index in
                 let contact = contacts[index]
                 dataService.deleteContact(contact)
-                
             }
-            
         }
     }
 }

@@ -20,8 +20,6 @@ extension ContactsList {
         
         @Published var contacts: [Contact] = []
         
-        private var cancellable: AnyCancellable?
-
         init(dataService: ContactDataServiceProtocol = ContactDataService()) {
             self.dataService = dataService
         }

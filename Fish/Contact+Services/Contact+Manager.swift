@@ -6,6 +6,8 @@
 //
 
 import CoreData
+import Combine
+import os
 
 protocol ContactDataServiceProtocol {
     func getContacts() -> [Contact]
@@ -13,9 +15,12 @@ protocol ContactDataServiceProtocol {
 }
 
 class ContactDataService: ContactDataServiceProtocol {
+    
   
     let viewContext: NSManagedObjectContext = PersistenceController.shared.viewContext
-
+    
+    var contacts = CurrentValueSubject<[Contact], Never>([])
+    
     func getContacts() -> [Contact] {
         let request: NSFetchRequest<Contact> = Contact.fetchRequest()
         let sort: NSSortDescriptor = NSSortDescriptor(keyPath: \Contact.firstName_, ascending: true)

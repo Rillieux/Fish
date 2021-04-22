@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Combine
 import os
 
 extension ContactsList {
@@ -16,8 +17,11 @@ extension ContactsList {
         let dataService: ContactDataServiceProtocol
         
         var firstName: String = ""
-        @Published var contacts = [Contact]()
         
+        @Published var contacts: [Contact] = []
+        
+        private var cancellable: AnyCancellable?
+
         init(dataService: ContactDataServiceProtocol = ContactDataService()) {
             self.dataService = dataService
         }

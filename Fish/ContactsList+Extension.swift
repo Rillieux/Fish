@@ -13,21 +13,21 @@ extension ContactsList {
     
     class ViewModel: ObservableObject {
         
+        let dataService: ContactDataServiceProtocol
+        
         var firstName: String = ""
-        @Published var contacts: [Contact] = []
+        @Published var contacts = [Contact]()
+        
+        init(dataService: ContactDataServiceProtocol = ContactDataService()) {
+            self.dataService = dataService
+        }
         
         func getContacts() {
-            contacts = PersistenceController.shared.getContacts()
+            self.contacts = dataService.getContacts()
         }
         
-        func saveContact() {
-            let contact = Contact(context: PersistenceController.shared.viewContext)
-            contact.firstName_ = firstName
-            PersistenceController.shared.save()
+        func addContact(){
+            dataService.addContact(name: firstName)
         }
-        
-        
     }
-    
-    
 }

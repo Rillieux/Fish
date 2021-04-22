@@ -21,7 +21,7 @@ struct ContactsList: View {
                 TextField("Enter contact's first name", text: $viewModel.firstName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Save") {
-                    viewModel.saveContact()
+                    viewModel.addContact()
                     viewModel.getContacts()
                 }
             }

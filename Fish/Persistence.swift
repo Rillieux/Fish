@@ -9,11 +9,11 @@ import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
-
+    
     let container: NSPersistentContainer
     var viewContext: NSManagedObjectContext {
-            return container.viewContext
-        }
+        return container.viewContext
+    }
     private init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Fish")
         if inMemory {
@@ -34,19 +34,5 @@ struct PersistenceController {
             print(error.localizedDescription)
         }
     }
-
-}
-
-extension PersistenceController {
     
-    func getContacts() -> [Contact] {
-        let request: NSFetchRequest<Contact> = Contact.fetchRequest()
-        
-        do {
-            return try viewContext.fetch(request)
-        } catch {
-            return []
-        }
-        
-    }
 }

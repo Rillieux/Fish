@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreData
-import Combine
 import os
 
 extension ContactsList {
@@ -30,6 +29,15 @@ extension ContactsList {
         
         func addContact(){
             dataService.addContact(name: firstName)
+        }
+        
+        func deleteContacts(at offsets: IndexSet) {
+            offsets.forEach { index in
+                let contact = contacts[index]
+                dataService.deleteContact(contact)
+                
+            }
+            
         }
     }
 }

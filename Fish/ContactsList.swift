@@ -31,6 +31,10 @@ struct ContactsList: View {
                 ForEach(viewModel.contacts) { contact in
                     Text("\(contact.firstName)")
                 }
+                .onDelete(perform: { index in
+                    viewModel.deleteContacts(at: index)
+                    viewModel.getContacts()
+                })
             }
             Spacer()
         }

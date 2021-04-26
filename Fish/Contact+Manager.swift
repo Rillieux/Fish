@@ -17,11 +17,13 @@ protocol ContactDataServiceProtocol {
 }
 
 class ContactDataService: ContactDataServiceProtocol {
-    
+
+//    let viewContext: NSManagedObjectContext = PersistenceController.shared.viewContext
+
     var viewContext: NSManagedObjectContext
-    
+
     init() {
-        
+
         if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
             viewContext = PersistenceController.preview.viewContext
         } else {

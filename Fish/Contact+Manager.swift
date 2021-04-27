@@ -18,18 +18,7 @@ protocol ContactDataServiceProtocol {
 
 class ContactDataService: ContactDataServiceProtocol {
 
-//    let viewContext: NSManagedObjectContext = PersistenceController.shared.viewContext
-
-    var viewContext: NSManagedObjectContext
-
-    init() {
-
-        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
-            viewContext = PersistenceController.preview.viewContext
-        } else {
-            viewContext = PersistenceController.shared.viewContext
-        }
-    }
+    var viewContext: NSManagedObjectContext = PersistenceController.shared.viewContext
     
     func getContacts() -> [Contact] {
         let request: NSFetchRequest<Contact> = Contact.fetchRequest()
@@ -63,5 +52,14 @@ class ContactDataService: ContactDataServiceProtocol {
     
     func saveContext() {
         PersistenceController.shared.save()
+    }
+}
+
+class MockContactDataService: ContactDataService {
+    
+    override init() {
+        super .init()
+        self.viewContext = PersistenceController.preview.viewContext
+        print("MOCK INIT")
     }
 }

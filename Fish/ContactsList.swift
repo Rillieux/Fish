@@ -18,7 +18,7 @@ struct ContactsList: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Enter contact's first name", text: $viewModel.firstName)
+                TextField("Enter YOUR contact's first name", text: $viewModel.firstName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Save") {
                     withAnimation {

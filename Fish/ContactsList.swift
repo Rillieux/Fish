@@ -16,33 +16,48 @@ struct ContactsList: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                TextField("Enter YOUR contact's first name", text: $viewModel.firstName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Button("Save") {
-                    withAnimation {
-                        viewModel.addContact()
-                        viewModel.getContacts()
-                        viewModel.firstName = ""
+        NavigationStack {
+            VStack {
+                HStack {
+                    TextField("Enter contact's first name", text: $viewModel.firstName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Button("Save") {
+                        withAnimation {
+                            viewModel.addContact()
+                            viewModel.getContacts()
+                            viewModel.firstName = ""
+                        }
                     }
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6.0)
+                            .foregroundStyle(.yellow)
+                    )
                 }
-            }
-            List {
-                ForEach(viewModel.contacts) { contact in
-                    Text("\(contact.firstName)")
+                .padding()
+                List {
+                    ForEach(viewModel.contacts) { contact in
+                        Text("\(contact.firstName)")
+                    }
+                    .onDelete(perform: { index in
+                        viewModel.deleteContacts(at: index)
+                        viewModel.getContacts()
+                    })
                 }
-                .onDelete(perform: { index in
-                    viewModel.deleteContacts(at: index)
-                    viewModel.getContacts()
-                })
+                .listStyle(PlainListStyle())
+                Spacer()
             }
-            Spacer()
+            .onAppear(perform: {
+                viewModel.getContacts()
+            })
+            .background(
+            Rectangle()
+                .foregroundStyle(Color.yellow.gradient)
+                .saturation(0.3)
+            )
+            .navigationTitle("Old Way")
         }
-        .padding()
-        .onAppear(perform: {
-            viewModel.getContacts()
-        })
     }
 }
 

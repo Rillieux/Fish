@@ -13,9 +13,9 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<6 {
+        for i in 0..<6 {
             let newContact = Contact(context: viewContext)
-            newContact.firstName_ = "Person"
+            newContact.firstName_ = "Person \( i + 1)"
         }
         do {
             try viewContext.save()

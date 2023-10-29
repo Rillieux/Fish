@@ -15,9 +15,9 @@ struct MainTabView: View {
                     Image(systemName: "person.crop.circle.fill")
                     Text("Contacts")
                 }.tag(1)
-            Text("Levels")
+            ObservableMacroView()
                 .tabItem{
-                    Image(systemName: "list.bullet")
+                    Image(systemName: "at")
                     Text("Levels")
                 }.tag(2)
         }

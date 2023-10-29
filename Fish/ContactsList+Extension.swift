@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
-import os
 
 extension ContactsList {
     
